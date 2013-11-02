@@ -7,7 +7,7 @@ var Model = require('../lib/model');
 describe('Model', function() {
   var model;
 
-  before(function() {
+  beforeEach(function() {
     model = new Model(['red', 'green', 'blue', 'blue']);
   });
   describe('addEntry', function() {
@@ -27,6 +27,18 @@ describe('Model', function() {
       var result = model.addEntry(['yellow', 'yellow', 'white', 'black']);
       expect(result).to.deep.equal({black: 0, white: 0});
     });
+
+    it('updates the rows with the new results', function() {
+      model.addEntry(['blue', 'red', 'blue', 'green']);
+      model.addEntry(['yellow', 'yellow', 'white', 'black']);
+      model.addEntry(['red', 'green', 'blue', 'blue']);
+      expect(model.rows).to.deep.equal([
+        {entry: ['blue', 'red', 'blue', 'green'], result: {black: 1, white: 3}},
+        {entry: ['yellow', 'yellow', 'white', 'black'], result: {black: 0, white: 0}},
+        {entry: ['red', 'green', 'blue', 'blue'], result: {black: 4, white: 0}},
+      ]);
+    });
+
   });
 });
 
