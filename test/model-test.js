@@ -15,6 +15,10 @@ describe('Model', function() {
       var result = model.addEntry(['red', 'green', 'blue', 'blue']);
       expect(result).to.deep.equal({black: 4, white: 0});
     });
+    it('an entry with 2 correct returns 2 black', function() {
+      var result = model.addEntry(['black', 'white', 'blue', 'blue']);
+      expect(result).to.deep.equal({black: 2, white: 0});
+    });
   });
 });
 
