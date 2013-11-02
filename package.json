@@ -17,5 +17,9 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/andersjanmyr/mastermind/issues"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.13.0"
   }
 }
