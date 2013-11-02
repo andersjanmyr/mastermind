@@ -23,6 +23,10 @@ describe('Model', function() {
       var result = model.addEntry(['blue', 'red', 'blue', 'green']);
       expect(result).to.deep.equal({black: 1, white: 3});
     });
+    it('with 0 correct 0 black and 0 white', function() {
+      var result = model.addEntry(['yellow', 'yellow', 'white', 'black']);
+      expect(result).to.deep.equal({black: 0, white: 0});
+    });
   });
 });
 
