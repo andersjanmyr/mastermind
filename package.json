@@ -1,0 +1,21 @@
+{
+  "name": "mastermind",
+  "version": "0.0.1",
+  "description": "A mastermind solver module.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --format spec test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andersjanmyr/mastermind.git"
+  },
+  "author": "Anders Janmyr",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/andersjanmyr/mastermind/issues"
+  }
+}
