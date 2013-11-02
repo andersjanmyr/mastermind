@@ -11,13 +11,17 @@ describe('Model', function() {
     model = new Model(['red', 'green', 'blue', 'blue']);
   });
   describe('addEntry', function() {
-    it('a correct entry returns 4 black', function() {
+    it('with all correct returns 4 black', function() {
       var result = model.addEntry(['red', 'green', 'blue', 'blue']);
       expect(result).to.deep.equal({black: 4, white: 0});
     });
-    it('an entry with 2 correct returns 2 black', function() {
+    it('with 2 correct returns 2 black', function() {
       var result = model.addEntry(['black', 'white', 'blue', 'blue']);
       expect(result).to.deep.equal({black: 2, white: 0});
+    });
+    it('with 1 correct and three wrong place returns 1 black and 3 white', function() {
+      var result = model.addEntry(['blue', 'red', 'blue', 'green']);
+      expect(result).to.deep.equal({black: 1, white: 3});
     });
   });
 });
